@@ -1,3 +1,10 @@
+def mark_checker(mark):
+    if mark > 100:
+        print("Marks cannot be greater than 100")
+        exit()
+    else:
+        return mark
+
 name = input("Enter your name: ")
 roll_no = int(input("Enter your roll number: "))
 
@@ -5,7 +12,8 @@ subject = ["English", "Hindi", "Maths", "Science", "Social Science"]
 
 marks = []
 for i in range(5):
-    marks.append(int(input(f"Enter marks for {subject[i]}: ")))
+    mark  = int(input(f"Enter marks for {subject[i]}: "))
+    marks.append(mark_checker(mark))
 
 total_marks = sum(marks)
 percentage = (total_marks/500)*100
